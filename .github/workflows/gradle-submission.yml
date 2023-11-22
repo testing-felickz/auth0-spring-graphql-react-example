@@ -15,5 +15,6 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         dependency-graph: generate-and-submit
+        build-root-directory: spring-graphql-api
     - name: Run a build and generate the dependency graph which will be submitted post-job
       run: ./spring-graphql-api/gradlew build
