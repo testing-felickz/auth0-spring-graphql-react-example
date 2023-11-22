@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    # fixes: Incompatible because this component declares a component for use during compile-time, compatible with Java 17 and the consumer needed a component for use during runtime, compatible with Java 11
     - uses: actions/setup-java@v3
       with:
         distribution: 'temurin' # See 'Supported distributions' for available options
@@ -21,5 +22,3 @@ jobs:
         arguments: build
         dependency-graph: generate-and-submit
         build-root-directory: ./spring-graphql-api
-    #- name: Run a build and generate the dependency graph which will be submitted post-job
-    #  run: ./spring-graphql-api/gradlew build
